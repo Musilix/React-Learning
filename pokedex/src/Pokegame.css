@@ -1,0 +1,10 @@
+#poke-game ul{
+  list-style: none;
+}
+
+#poke-game{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}

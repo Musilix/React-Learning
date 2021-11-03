@@ -1,10 +1,10 @@
-import logo from './logo.svg';
 import './App.css';
-import Pokedex from './Pokedex';
+import Pokegame from './Pokegame';
 
 function App() {
   return (
-    <Pokedex cards={3}/>
+    // <Pokedex cards={3}/>
+    <Pokegame/>
   );
 }
 

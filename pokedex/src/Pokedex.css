@@ -1,0 +1,14 @@
+.poke-dex{
+  display: flex;
+  flex-direction: row;
+  /* flex: 1; */
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 10px;
+
+  list-style: none !important;
+}
+
+.poke-dex > * {
+  padding: 0px 50px;
+}

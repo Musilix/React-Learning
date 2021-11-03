@@ -1,0 +1,37 @@
+.poke-card{
+  background: white;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  align-items: center;
+  padding: 10px 35px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px 0 rgb(50 50 93 / 15%);
+
+  color: #747fe0;
+  font-family: Inter var,sans-serif!important;
+  margin: 0;
+}
+
+.poke-card img{
+  max-width: 150px;
+  max-width: 150px;
+}
+
+.poke-card h3{
+  font-weight: 800;
+  margin:1px 0px;
+}
+
+.poke-card h4, .poke-card p{
+  font-weight: 400;
+  font-family: JetBrains Mono,monospace;
+  color: #636979;
+
+  /* margin: 1px, 0px;
+  padding: 1px 0px; */
+
+  margin: 0px;
+
+  box-sizing: border-box;
+}
