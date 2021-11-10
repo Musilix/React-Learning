@@ -136,6 +136,7 @@ class A extends B{
     miniBoingy() {
         console.log(`yonk yonk yonk, here's aVal: ${this.aVal}`);
     }
+
 }
 
 
@@ -143,11 +144,15 @@ A.prototype.miniBoingy = function() {
     console.log(`HELP I'M STUCK IN THE PROTOTYPE`);
 }
 
-console.log("---------- Prototypes and Class Inheritance ----------");
-let a = new A();
-a.miniBoingy();
-a.superBoingy();
+A.prototype.aVal = "ccc";
 
+console.log("---------- Prototypes and Class Inheritance ----------");
+
+let a = new A();
+a.miniBoingy(); // what the shit, the proto ovverode the class fn...
+a.superBoingy();
+console.log(a.aVal); // but prototype variable doesnt override class variable
+console.log(a.getPrivate());
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //// Prototype w/ Function Constructor based Inheritance
