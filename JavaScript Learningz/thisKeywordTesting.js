@@ -1,0 +1,52 @@
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//// Calculator Object
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+// Approach 1
+function Calculator(){
+    this.total = 0;
+    this.arg1;
+    this.arg2;
+    
+    this.read = function(arg1, arg2){
+        this.arg1 = arg1;
+        this.arg2 = arg2;
+    }
+
+    this.sum = function(){
+        return this.arg1 + this.arg2;
+    }
+
+    this.mul = function(){
+        return this.arg1 * this.arg2;
+    }
+}
+
+let calculator = new Calculator();
+calculator.read(1, 2);
+console.log("Calculator Approach 1:")
+console.log(calculator.sum());
+console.log(calculator.mul());
+
+// Approach 2
+// I do not like this approach; feels less structured...
+calculator = {
+    read(arg1, arg2){
+        this.arg1 = arg1;
+        this.arg2 = arg2;
+    },
+    sum(){
+        return this.arg1 + this.arg2;
+    },
+    mul(){
+        return this.arg1 * this.arg2;
+    }
+}
+
+calculator.read(1,2);
+console.log("Calculator Approach 2:")
+console.log(calculator.sum());
+console.log(calculator.mul());
