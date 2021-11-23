@@ -73,3 +73,4 @@ ThingThingSecondComing(1,2);
 // it's now attaching it to our someObject object...
 ThingThingSecondComing.call(someObject, 3, 4);
 ThingThingSecondComing.apply(someObject, [4, 5]);
+ThingThingSecondComing(1,2); // altered context in call/apply invocations isn't permanent

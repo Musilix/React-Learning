@@ -1,0 +1,15 @@
+{
+  "name": "javascript-learningz",
+  "version": "1.0.0",
+  "description": "sub learnings for React...",
+  "main": "ApplyCallBind.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Kareem",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "node-fetch": "^3.1.0"
+  }
+}
