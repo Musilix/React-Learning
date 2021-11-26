@@ -49,3 +49,10 @@ fetch("https://www.boredapi.com/api/activity")
  But since the JS event loop will first go through all "synchronous" calls on the call stack before popping in "async" code from
  the message queue, we get that weird funcitonality... cool.
 */
+
+/* 
+  If we wanted to stop something like what's described above, we can utilize the async/await syntax!
+  We should know, to await some async block of code before moving on, we need to make sure that we constrain
+  our code we want to await inside a function labeled as async...  
+*/
+
