@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@800&family=Lato&display=swap');
+
+.diceRoller{
+    height: 100%;
+    /* width: 100%; */
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#dice-roller{
+    width:inherit;
+
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+    font-size: 14px;
+    font-family: 'Inter var',sans-serif;
+    font-weight: 800;
+    color: #3a67b2;
+    text-decoration: none;
+
+    background-color: #f6f9fc;
+
+    border: none;
+    border-radius: 35px;
+
+    box-shadow: 0 1px 6px -1px #747fe0;
+
+    transition: background-color 500ms ease-in-out, color 500ms ease-in-out, width 500ms ease-in-out;
+    
+}
+
+#dice-roller:hover{
+    cursor: pointer;
+}
+
+#dice-roller span{
+    padding: 10px;
+}
+
+#dice-roller:disabled{
+    color: #f6f9fc;
+    background-color: #3a67b2;
+    cursor:not-allowed;
+}
