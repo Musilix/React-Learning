@@ -1,0 +1,22 @@
+h1{
+    margin: 0px;
+    padding: 0px;
+}
+#box-wrap{
+    list-style: none;
+
+    width: 85%;
+    height: 85%;
+
+    border-radius: 55px;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+
+    margin: 0px;
+    padding: 0px;
+}
