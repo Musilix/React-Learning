@@ -1,10 +1,10 @@
-import { Component } from 'react';
-import ColorBox from '../ColorBox/ColorBox';
+import { Component } from "react";
+import ColorBox from "../ColorBox/ColorBox";
 import "./ColorBoxes.css";
 
 import RandomGenerator from "../helper";
 
-class ColorBoxes extends Component{
+class ColorBoxes extends Component {
     static defaultProps = {
         colors: [
             "#FFADAD",
@@ -19,43 +19,65 @@ class ColorBoxes extends Component{
             "#BDE0FE",
             "#FFAFCC",
             "#CDB4DB",
-        ]
-    }
+        ],
+    };
 
-    constructor(props){
+    constructor(props) {
         super(props);
         this.state = {
-            boxes: Array.from({length: this.props.boxCount}).map((e) => {
+            boxes: Array.from({ length: this.props.boxCount }).map((e) => {
                 let randomColorIdx = RandomGenerator(this.props.colors.length);
-                return { color: this.props.colors[randomColorIdx]}
-            })
-        }
+                return { boxColor: this.props.colors[randomColorIdx] };
+            }),
+        };
     }
 
-    changeBoxColor(boxIdx){
-        console.log(boxIdx);
+    getDistinctColorIdx(prevColor){
+        let randomColorIdx;
+        
+        do{
+            randomColorIdx = RandomGenerator(this.props.colors.length);
+        }while(this.props.colors[randomColorIdx] === prevColor)
+
+        return randomColorIdx;
+    }
+
+    changeBoxColor(boxIdx) {
         this.setState((prevState) => {
+            let newBoxes = prevState.boxes.map((box, i) => {
+                if (i === boxIdx) {
+
+                    let randomColorIdx = this.getDistinctColorIdx(box.boxColor);
+
+                    return {
+                        boxColor: this.props.colors[randomColorIdx]
+                    };
+                }
+                return box;
+            });
+
             return {
-                boxes: prevState.boxes.map((e, i) => {
-                    if(i === boxIdx){
-                        return {color: this.props.colors[RandomGenerator(this.props.colors.length)]}
-                    }
-                    return e;
-                })
-            }
+                boxes: newBoxes,
+            };
         });
     }
 
-    render(){
+    render() {
         return (
             <>
-                <ul id = "box-wrap">
+                <ul id="box-wrap">
                     {this.state.boxes.map((box, idx) => {
-                        return <ColorBox color = {box.color} boxIdx = {idx} clickHandler = {() => this.changeBoxColor(idx)} />
+                        return (
+                            <ColorBox
+                                color={box.boxColor}
+                                boxIdx={idx}
+                                clickHandler={this.changeBoxColor.bind(this)}
+                            />
+                        );
                     })}
                 </ul>
             </>
-        )
+        );
     }
 }
 

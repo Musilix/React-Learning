@@ -12,7 +12,9 @@ code {
     monospace;
 }
 
-body,html, #root{
+body,
+html,
+#root {
   margin: 0px;
   padding: 0px;
 
