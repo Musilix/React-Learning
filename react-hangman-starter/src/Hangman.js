@@ -22,7 +22,8 @@ class Hangman extends Component {
             nWrong: 0,
             guessed: new Set(),
             answer: randomWord(),
-            lost: false
+            lost: false,
+            won: false
         };
         this.handleGuess = this.handleGuess.bind(this);
         this.restartGame = this.restartGame.bind(this);
@@ -50,19 +51,20 @@ class Hangman extends Component {
                 nWrong: prevState.nWrong + (prevState.answer.includes(ltr) ? 0 : 1),
             };
 
-            if (prevState.nWrong + (prevState.answer.includes(ltr) ? 0 : 1) === this.props.maxWrong) {
-                // add all letters from the current word to the guessed array which gets used to render the current word in UI during the render() calls
-                [...prevState.answer].forEach((ltr) => {
-                    prevState.guessed.add(ltr);
-                });
+            // This may be overkill...
+            // if (prevState.nWrong + (prevState.answer.includes(ltr) ? 0 : 1) === this.props.maxWrong) {
+            //     // add all letters from the current word to the guessed array which gets used to render the current word in UI during the render() calls
+            //     [...prevState.answer].forEach((ltr) => {
+            //         prevState.guessed.add(ltr);
+            //     });
 
-                // re-use base return obj and override guessed val with newly edited guessed set from above
-                return {
-                    ...baseReturn,
-                    guessed: prevState.guessed,
-                    lost: true,
-                };
-            }
+            //     // re-use base return obj and override guessed val with newly edited guessed set from above
+            //     return {
+            //         ...baseReturn,
+            //         guessed: prevState.guessed,
+            //         lost: true,
+            //     };
+            // }
 
             return baseReturn;
         });
@@ -83,53 +85,48 @@ class Hangman extends Component {
     }
 
     restartGame() {
-        this.setState((prevState) => {
-            return {
-                nWrong: 0,
-                guessed: new Set(),
-                answer: randomWord(),
-                lost: false,
-            };
-        });
+      this.setState({
+        nWrong: 0,
+        guessed: new Set(),
+        answer: randomWord(),
+        lost: false,
+        won: false
+      });
     }
 
     /** render: render game */
     render() {
-        return (
-            <div className="Hangman">
-                <h1>Hangman</h1>
-                <img
-                    alt={
-                        this.state.nWrong > 0
-                            ? `Hangman with ${this.state.nWrong} limbs`
-                            : "Hangman setting with no man"
-                    }
-                    src={this.props.images[this.state.nWrong]}
-                />
-                <p className="Hangman-word-wrg-gses">{`Wrong Guesses: ${this.state.nWrong}`}</p>
-                <p className="Hangman-word">{this.guessedWord()}</p>
+      const gameOver = this.state.nWrong >= this.state.maxWrong;
 
-                {!this.state.lost ? 
-                  <p className="Hangman-btns" disabled={this.state.lost}>
-                      {this.generateButtons()}
-                  </p>
-                : 
-                  <h3 className="Hangman-loss-msg">
-                      Aw damn... You really just lost. Better luck next time!
-                  </h3>
+      return (
+        <div className="Hangman">
+            <h1>Hangman</h1>
+            <img
+                alt={
+                    this.state.nWrong > 0
+                        ? `Hangman with ${this.state.nWrong} limbs`
+                        : "Hangman setting with no man"
                 }
+                src={this.props.images[this.state.nWrong]}
+            />
+            <p className="Hangman-word-wrg-gses">{`Wrong Guesses: ${this.state.nWrong}`}</p>
 
-                <div className="Hangman-restart-wrap">
-                    <button
-                        className="Hangman-restart-btn"
-                        onClick={this.restartGame}
-                    >
-                        RESTART
-                    </button>
-                </div>
+            <p className="Hangman-word">{(!gameOver) ? this.guessedWord() : this.state.answer}</p>
+            <p className="Hangman-btns" disabled={this.state.lost}>
+                {(!gameOver) ? this.generateButtons() : "Aw damn... You really just lost. Better luck next time!"}
+            </p>
+
+            <div className="Hangman-restart-wrap">
+                <button
+                    className="Hangman-restart-btn"
+                    onClick={this.restartGame}
+                >
+                    RESTART
+                </button>
             </div>
-        );
-    }
+        </div>
+    );
+  }
 }
 
 export default Hangman;
