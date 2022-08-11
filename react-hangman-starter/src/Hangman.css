@@ -57,7 +57,7 @@
   box-shadow: 0 6px #9e9e9e;
 }
 
-.Hangman-restart-btn{
+#Hangman-restart-btn{
   border: none;
   font-family: inherit;
   font-size: 1rem;
