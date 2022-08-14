@@ -1,0 +1,41 @@
+.Cell {
+  height: 100px;
+  width: 100px;
+  background-color: darkgray;
+  
+  margin: 10px;
+  /* box-shadow: 0 11.3197px 56.5984px #2d43794d; */
+
+  border-radius: 10px;
+
+  transition: background-color .25s ease-in-out;
+}
+
+.Cell:hover {
+  cursor: pointer;
+  background-color: rgb(117, 117, 117);
+}
+
+
+.Cell-lit {
+  background-color: #2563FF;
+  box-shadow: 0px 0px 10px rgb(41, 107, 250);
+  animation: lightCell;
+
+  transition: background-color .25s ease-in-out, box-shadow .25s ease-in-out;
+}
+
+.Cell-lit:hover{
+  background-color: rgb(20, 70, 179);
+  box-shadow: 0px 0px 8px rgb(41, 107, 250);
+}
+
+@keyframes identifier {
+  from{
+    box-shadow: 0px 0px 0px rgb(49, 114, 255);
+  }
+
+  to{
+    box-shadow: 0px 0px 20px rgb(49, 114, 255);
+  }
+}

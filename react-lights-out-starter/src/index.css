@@ -1,0 +1,146 @@
+@font-face {
+  font-family: "BertSans";
+  src: url(fonts/BertSans-Regular.ttf);
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "BertSans";
+  src: url(fonts/BertSans-Bold.ttf);
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "BertSans";
+  src: url(fonts/BertSans-ExtraBold.ttf);
+  font-weight: bolder;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+html,body, #root{
+  margin: 0px;
+  padding: 0px;
+
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  background-color: #394253;
+
+  color: white;
+  text-align: center;
+}
+
+h1{
+  font-family: "BertSans";
+  font-size: 48px;
+  font-weight: normal;
+
+  /* text-shadow: 0px 0px 10px #c5c5c5; */
+  text-transform: uppercase ;
+
+  margin: 5px 0px;
+  padding: 0px;
+
+  animation-name: jitter;
+  animation-duration: 5s;
+  animation-timing-function: ease-in;
+  animation-delay: 0s;
+  animation-fill-mode: none;
+  animation-iteration-count: infinite;
+  animation-play-state: paused;
+
+  animation-direction: forward;
+  animation-play-state: running;
+  
+}
+
+h2{
+  font-family: "BertSans";
+  font-size: 78px;
+  font-weight: bolder;
+
+  color: #2563FF;
+  /* text-shadow: 0px 0px 10px #c5c5c5; */
+  text-transform: uppercase ;
+
+  margin: 5px 0px;
+  padding: 0px;
+
+  animation-name: jitter2;
+  animation-duration: 3s;
+  animation-timing-function: ease-in-out;
+  animation-delay: 0s;
+  animation-fill-mode: none;
+  animation-iteration-count: infinite;
+  animation-play-state: paused;
+
+  animation-direction: forward;
+  animation-play-state: running;
+}
+
+@keyframes jitter {
+  0% {
+    text-shadow: 0px 0px 4px #c5c5c5;
+  }
+  17% {
+    text-shadow: 0px 0px 9px #c5c5c5;
+  }
+  32% {
+    text-shadow: 0px 0px 6px #c5c5c5;
+  }
+  48% {
+    text-shadow: 0px 0px 9px #c5c5c5;
+  }
+  54%{
+    text-shadow: 0px 0px 6px #c5c5c5;
+  }
+  63% {
+    text-shadow: 0px 0px 6px #c5c5c5;
+  }
+  79% {
+    text-shadow: 0px 0px 7px #c5c5c5;
+  }
+  100% {
+    text-shadow: 0px 0px 4px #c5c5c5;
+  }
+}
+
+@keyframes jitter2 {
+  0% {
+    text-shadow: 0px 0px 4px #5384ff;
+  }
+  17% {
+    text-shadow: 0px 0px 9px #5384ff;
+  }
+  32% {
+    text-shadow: 0px 0px 4px #5384ff;
+  }
+  48% {
+    text-shadow: 0px 0px 6px #5384ff;
+  }
+  54%{
+    text-shadow: 0px 0px 4px #5384ff;
+  }
+  63% {
+    text-shadow: 0px 0px 6px #5384ff;
+  }
+  79% {
+    text-shadow: 0px 0px 9px #5384ff;
+  }
+  100% {
+    text-shadow: 0px 0px 4px #5384ff;
+  }
+}
+

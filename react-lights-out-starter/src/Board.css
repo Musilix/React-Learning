@@ -1,0 +1,40 @@
+.Board {
+  margin: 0 auto;
+
+  border-radius: 20px;
+  overflow: hidden;
+
+  border-spacing: 9px;
+
+  margin: 10px 0px;
+}
+
+#restart-board{
+  border: none;
+  background-color: #EBF0FF;
+  color: #2563FF;
+
+  border-radius: 99px;
+
+  font-weight: bold;
+
+  padding: 10px;
+
+  font-family: "BertSans";
+  font-weight: bolder;
+  font-size: 14px;
+  text-transform: uppercase;
+
+  box-shadow: 0px 0px 1px #EBF0FF;
+
+  transition: all .25s ease-in-out;
+}
+
+#restart-board:hover{
+  cursor: pointer;
+
+  background-color: #2563FF;
+  color: #EBF0FF;
+  box-shadow: 0px 0px 4px #EBF0FF;
+  /* box-shadow: 11.3197px 56.5984px #2d43794d; */
+}
