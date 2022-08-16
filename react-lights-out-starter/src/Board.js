@@ -50,10 +50,6 @@ class Board extends Component {
 
   flipCellsAround(row, col) {
     let {nCols, nRows} = this.props;
-    // let newBoard = this.state.board;
-
-    console.log(nCols);
-    console.log(nRows);
 
     function flipCell(newBoard, x, y) {
       // if this coord is actually on board, flip it
@@ -89,7 +85,7 @@ class Board extends Component {
   //brute force check if all cells are lit
   checkCells(newBoard){
     let fullyLit = true;
-    console.log(newBoard);
+    
     for(let row = 0; row < this.props.nRows; row++){
       for(let col = 0; col < this.props.nCols; col++){
         if (newBoard[row][col] === 0){
@@ -99,6 +95,9 @@ class Board extends Component {
         }
       }
     }
+
+    // Could use .every() method in place of this bulky nested for loop
+    // let fullyLit = newBoard.every((row) => row.every((cell) => !cell));
     
     return fullyLit;
   }
