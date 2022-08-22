@@ -1,0 +1,33 @@
+.box {
+  border-radius: 15px;
+}
+
+.boxRemoveButton {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.boxRemoveButton button {
+  position: absolute;
+  top: 1px;
+  right: 1px;
+
+  padding: 2.5px 5px;
+
+  border-radius: 999px;
+  background-color: white;
+  border: 2px solid black;
+
+  font-size: 14px;
+
+  transition: all .25s ease-in-out;
+}
+
+.boxRemoveButton button:hover {
+  border: 2px solid white;
+  background-color: black;
+  color: white;
+
+  cursor: pointer;
+}
