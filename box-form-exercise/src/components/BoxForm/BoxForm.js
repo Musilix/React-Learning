@@ -19,7 +19,11 @@ export default class BoxForm extends Component {
     evt.preventDefault();
     let data = this.state;
     this.props.addBox(this.state);
-
+    this.setState({
+      color: "#000000",
+      width: "1",
+      height: "1",
+    });
     console.log(data);
   }
 
@@ -37,6 +41,7 @@ export default class BoxForm extends Component {
             id="boxColor"
             name="color"
             type="color"
+            value={this.state.color}
             placeholder="#000000"
             onChange={this.handleChange}
             required
@@ -52,6 +57,7 @@ export default class BoxForm extends Component {
             pattern="[0-9]+"
             minLength="2"
             maxLength="4"
+            value={this.state.width}
             placeholder="Box Width"
             onChange={this.handleChange}
             required
@@ -67,6 +73,7 @@ export default class BoxForm extends Component {
             pattern="[0-9]+"
             minLength="2"
             maxLength="4"
+            value={this.state.height}
             placeholder="Box Height"
             onChange={this.handleChange}
             required
