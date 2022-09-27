@@ -1,5 +1,5 @@
 import React from "react";
-import useToggle from "./useToggle";
+import useToggle from "./Hooks/useToggle";
 
 export default function Toggler() {
   const [isHappy, toggleIsHappy] = useToggle(true);
