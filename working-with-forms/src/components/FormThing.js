@@ -20,6 +20,7 @@ export default class FormThing extends Component {
   handleSubmit(e) {
     e.preventDefault();
     console.log(this.state);
+    console.debug(e);
     this.setState({ username: "", message: "" });
   }
 
