@@ -1,0 +1,68 @@
+#squibby-wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  background-color: #fff;
+  box-shadow: 0px 2px 8px rgba(107, 144, 128, 0.3);
+
+  width: fit-content;
+
+  padding: 25px 30px;
+
+  border-radius: 25px;
+
+  font-family: 'IBM Plex Sans', sans-serif;
+}
+
+#squibby-img {
+  width: 250px;
+  height: 250px;
+
+  background: rgb(224, 224, 224);
+  border-radius: 9999px;
+  box-shadow: 0px 2px 8px rgba(107, 144, 128, 0.3);
+}
+
+#text-wrap {
+  margin: 25px 5px;
+
+}
+
+#squibby-header {
+  color: #425a50;
+  margin: 0px;
+  padding: 0px;
+}
+
+#squibby-info {
+  font-size: 18px;
+  margin: 0px;
+  padding: 0px;
+
+}
+
+#squibby-feed {
+  font-size: 12px;
+  font-weight: bold;
+
+  border: dotted 2px #24332d;
+
+  background-color: #6B9080;
+
+  border-radius: 5px;
+
+  padding: 10px;
+  margin: 0px 0px 0px 0px;
+
+  transition: all .15s ease-in-out;
+}
+
+#squibby-feed:hover {
+  cursor: pointer;
+
+  color: #24332d;
+  background-color: #F6FFF8;
+  border: 2px solid #24332d;
+}
